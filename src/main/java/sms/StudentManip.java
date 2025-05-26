@@ -37,7 +37,7 @@ public class StudentManip {
 	             stmt.setDate(5, java.sql.Date.valueOf(student.getDob()));
 	             stmt.setString(6, student.getCourse());
 	             stmt.executeUpdate();
-	         }
+	    	 }
 	    }
 	    public List<Student> getStudents() throws SQLException{
 	    	List<Student> students = new ArrayList<>();
@@ -84,4 +84,4 @@ public class StudentManip {
 	            stmt.executeUpdate();
 	        }
 	    }
-}
+}//commit

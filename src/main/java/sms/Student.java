@@ -28,15 +28,16 @@ public class Student {
         this.course = course;
     }
     
-    public Student(int id, String first_name, String last_name, char gender, String email, LocalDate dob, String course, String subject_name, ) {
-        this.id = id;
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.gender = gender;
-        this.email = email;
-        this.dob = dob;
-        this.course = course;
-    }
+//    public Student(int id, String first_name, String last_name, char gender, String email, LocalDate dob, String course, String subject_name, ) {
+//        this.id = id;
+//        this.first_name = first_name;
+//        this.last_name = last_name;
+//        this.gender = gender;
+//        this.email = email;
+//        this.dob = dob;
+//        this.course = course;
+//        this.subject_name=subject_name;
+//    }
     //getters and setters
     public int getId() {return id;}
     

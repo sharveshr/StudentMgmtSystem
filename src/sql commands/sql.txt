@@ -1,0 +1,41 @@
+CREATE DATABASE school;
+
+school | CREATE TABLE `school` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `gender` char(1) NOT NULL,
+  `email` varchar(80) NOT NULL,
+  `dob` date NOT NULL,
+  `course` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
+);
+
+ marks | CREATE TABLE `marks` (
+  `student_id` int NOT NULL,
+  `subject_id` int NOT NULL,
+  `marks` int NOT NULL,
+  KEY `fk_marks_student` (`student_id`),
+  CONSTRAINT `fk_marks_student` FOREIGN KEY (`student_id`) REFERENCES `school` (`id`) ON DELETE CASCADE
+);
+
+login | CREATE TABLE `login` (
+  `login_id` int NOT NULL,
+  `email` varchar(80) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  PRIMARY KEY (`login_id`),
+  KEY `fk_login_email` (`email`),
+  CONSTRAINT `fk_login_email` FOREIGN KEY (`email`) REFERENCES `school` (`email`) ON DELETE CASCADE
+);
+
+coursetaken | CREATE TABLE `coursetaken` (
+  `id` int DEFAULT NULL,
+  `subject_id` int DEFAULT NULL
+);
+
+ subjects | CREATE TABLE `subjects` (
+  `subject_id` int NOT NULL,
+  `subject_name` varchar(80) DEFAULT NULL,
+  PRIMARY KEY (`subject_id`)
+); 
